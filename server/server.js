@@ -1,5 +1,7 @@
-import express from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
+
+import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -15,8 +17,6 @@ import taskRoutes from './routes/taskRoutes.js';
 // ES module dirname workaround
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 // Connect to database
 connectDB();
